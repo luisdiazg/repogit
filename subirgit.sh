@@ -1,5 +1,6 @@
 #!/bin/bash
 #automatizacion de git
+function githb() {
 clear
 echo " ****************************** "
 echo " **    Menu  GitHub          ** "
@@ -30,6 +31,7 @@ then
 	git commit -m " $commit "
 	git remote add origin https://github.com/$usuario/$repo.git
 	git push -u origin master
+	githb
 fi
 
 if [ $opcion = 2 ];
@@ -43,9 +45,15 @@ then
 	git add $archivo
         git commit -m " $commit "
         git push -u origin master
+	githb
 fi
-
-
+if [ $opcion = 3 ];
+then 
+	echo "Adios"
+	break
+fi
+}
+githb
 
 
 
